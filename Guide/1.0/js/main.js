@@ -106,7 +106,7 @@ async function loadContent(topKey, subItem) {
             <div style="padding: 20px; background: #fff3f3; border: 1px solid #ffcccc; color: #cc0000; border-radius: 4px;">
                 <h3>页面加载失败</h3>
                 <p>${error.message}</p>
-                <p>请确保您使用了 Live Server 或本地服务器运行本项目。</p>
+                <p>请尝试重新刷新页面并耐心等待 （GitHub Pages 的网站访问速度较慢） </p>
             </div>
         `;
     }
