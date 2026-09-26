@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 : This page could not be found</title>
+    <style>
+        /* 重置基础样式 */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* 让整个页面内容在屏幕正中间居中 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 图片样式 */
+        .error-icon {
+            width: 80px;         /* 图片宽度，可根据需要修改 */
+            height: auto;        /* 高度自适应 */
+            max-width: 100%;
+            margin-bottom: 24px; /* 图片和下方文字之间的间距 */
+            opacity: 1.0;        /* 可选：稍微降低透明度让画面更柔和 */
+        }
+
+        /* 原有的文字容器（水平排列） */
+        .error-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* "404" 数字样式 */
+        .error-code {
+            font-size: 24px;
+            font-weight: 500;
+            margin-right: 20px;
+            padding-right: 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            line-height: 1.2;
+        }
+
+        /* 提示文案样式 */
+        .error-message {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .error-message1 {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 包裹整个内容的容器 -->
+    <div class="page-wrapper">
+        
+        <img 
+            class="error-icon" 
+            src="images/108.webp" viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' 
+            alt="Error Icon"
+        >
+
+        <!-- 文字部分 -->
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <div class="error-message">This page could not be found.</div>
+            <br>
+        
+        </div>
+        
+        <br>
+        <div class="error-message1">无法找到网页</div>
+
+        <br>
+        <p style="font-size:14px;">"在寻找什么东西吗？"</p>
+        <br>
+        <p style="font-size:14px;"> <a href="index.html">点击此处返回首页</a></p>
+        
+    </div>
+
+</body>
+</html>

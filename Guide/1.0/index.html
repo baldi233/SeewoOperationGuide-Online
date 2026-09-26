@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/ic_launcher.png">
+<title>操作指南</title>
+<!-- 引入外部 CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="top-nav" id="topNav">
+    <!-- 左上角 Logo (替换为图片) -->
+    <div class="app-logo">
+        <img src="images/ic_logo_top.png" alt="操作指南">
+    </div>
+    
+    <!-- 导航按钮组 (外面包裹一层div用于滚动适配) -->
+    <div class="nav-scroll-wrapper">
+        <!-- 修改：初始激活状态改为 快速入门 -->
+        <div class="nav-item active" data-key="快速入门">快速入门</div>
+        <div class="nav-item" data-key="软件系统">软件系统</div>
+        <div class="nav-item" data-key="硬件维护">硬件维护</div>
+        <div class="nav-item" data-key="常见问题">常见问题</div>
+    </div>
+</header>
+
+<div class="main-container">
+    <aside class="sidebar">
+        <!-- 侧边栏滚动容器 -->
+        <div class="sidebar-scroll">
+            <ul class="sidebar-menu" id="sidebarMenu"></ul>
+        </div>
+        <!-- 底部退出按钮 -->
+        <div class="sidebar-bottom"><i>⇥</i> 退出</div>
+    </aside>
+
+    <!-- 右侧外层灰色背景区 -->
+    <main class="content-area">
+        <!-- 白色卡片内容区 (JS将把HTML注入到这里) -->
+        <div class="content-card" id="contentCard"></div>
+    </main>
+</div>
+
+<!-- 引入外部 JS -->
+<script src="js/main.js"></script>
+</body>
+</html>

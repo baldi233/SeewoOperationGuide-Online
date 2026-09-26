@@ -1,0 +1,313 @@
+/* ================= 1. 全局样式重置 ================= */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: "Microsoft YaHei", sans-serif; 
+    color: #333; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden; /* 禁止 body 整体滚动 */
+    background-color: #f0f2f5; /* 整体外层背景为灰色 */
+}
+
+
+/* ================= 2. 顶部导航栏 ================= */
+.top-nav { 
+    background-color: #222; 
+    color: #ccc; 
+    display: flex; 
+    height: 50px; 
+    align-items: center; 
+    flex-shrink: 0; /* 防止顶部被压缩 */
+}
+
+/* 左上角 Logo 区域 (白底，不可点击) */
+.app-logo { 
+    height: 50px;
+    background-color: transparent; /* 修改：去除白边，融合黑色背景 */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 0 20px; 
+    cursor: default; 
+    user-select: none; 
+    flex-shrink: 0;
+}
+
+.app-logo img {
+    height: 60px; 
+    width: auto;
+    object-fit: contain;
+}
+
+/* 顶部导航按钮滚动容器 (分辨率过小时可横向滚动) */
+.nav-scroll-wrapper {
+    display: flex;
+    flex: 1;
+    overflow-x: auto; 
+    white-space: nowrap;
+}
+.nav-scroll-wrapper::-webkit-scrollbar { display: none; } /* 隐藏滚动条更美观 */
+
+/* 导航按钮 */
+.nav-item { 
+    padding: 0 40px; 
+    line-height: 50px; 
+    cursor: pointer; 
+    font-size: 15px; 
+    user-select: none; 
+    flex-shrink: 0;
+}
+
+.nav-item:hover { color: #fff; }
+.nav-item.active { background-color: #28a2f8; color: #fff; }
+
+
+/* ================= 3. 主体布局容器 ================= */
+.main-container { 
+    display: flex; 
+    flex: 1; 
+    overflow: hidden; 
+}
+
+
+/* ================= 4. 左侧边栏 ================= */
+.sidebar { 
+    width: 170px; /* 固定宽度 */
+    background-color: #f0f6fc; 
+    display: flex; 
+    flex-direction: column; 
+    border-right: 1px solid #e0e0e0; 
+    flex-shrink: 0; /* 防止被挤压 */
+}
+
+/* 侧边栏滚动容器 (分辨率过小时可纵向滚动) */
+.sidebar-scroll {
+    flex: 1; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+.sidebar-scroll::-webkit-scrollbar { width: 4px; }
+
+/* 菜单列表 */
+.sidebar-menu { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+/* 菜单项 (文字居中、固定大小防止切换时变化) */
+.sidebar-menu li { 
+    height: 50px; /* 固定高度 */
+    line-height: 50px; /* 垂直居中 */
+    text-align: center; /* 文字居中 */
+    cursor: pointer; 
+    color: #555; 
+    font-size: 14px; 
+    
+    /* 预留左侧透明边框位置，避免激活时出现左右抖动 */
+    border-left: 4px solid transparent; 
+    padding: 0 10px; 
+}
+
+.sidebar-menu li:hover { 
+    background-color: #e4eef8; 
+    color: #28a2f8; 
+}
+
+.sidebar-menu li.active { 
+    background-color: #dceaf7; 
+    color: #28a2f8; 
+    font-weight: bold; 
+    border-left: 4px solid #28a2f8; /* 左侧蓝色竖线 */
+}
+
+/* 底部退出按钮 (固定在左下角) */
+.sidebar-bottom { 
+    height: 50px; 
+    flex-shrink: 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background-color: #f0f6fc; 
+    border-top: 1px solid #e0e0e0;
+    cursor: pointer; 
+    color: #666; 
+    font-size: 14px; 
+    position: sticky; 
+    bottom: 0; /* 固定在底部 */
+    user-select: none;
+}
+
+.sidebar-bottom:hover { 
+    color: #0084ff; 
+    background-color: #e4eef8; 
+}
+
+.sidebar-bottom i { 
+    margin-right: 5px; 
+    font-style: normal; 
+    font-size: 16px; 
+}
+
+
+/* ================= 5. 右侧内容区 (灰色背景 + 白色卡片) ================= */
+.content-area { 
+    flex: 1; 
+    padding: 20px; /* 外层留白形成灰色边距 */
+    overflow-y: auto; /* 右侧内容可滚动 */
+    background-color: #d8dce2; /* 背景灰 */
+}
+
+/* 白色卡片容器 */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 30px;
+    min-height: 100%; /* 撑满外层高度 */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05); 
+    border: 1px solid #eaeaea;
+}
+
+
+/* ================= 6. 内容区文章通用样式  ================= */
+.content-title { 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #333; 
+    background-color: transparent; /* 核心修复：去除图1中的灰色背景块 */
+    margin-top: 0; /* 核心修复：防止标题上方出现大段空隙 */
+    margin-bottom: 20px; 
+    padding-bottom: 15px; 
+    border-bottom: 1px solid #eaeaea; /* 保持底部分割线 */
+}
+
+.article h3 { 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #333; 
+    margin-top: 35px; 
+    margin-bottom: 15px; 
+    padding-bottom: 15px; 
+    border-bottom: 1px solid #eaeaea; /* 问题下方的分隔线 */
+}
+
+.article h3:first-child { 
+    margin-top: 0; 
+} 
+
+.article p { 
+    font-size: 14px; 
+    line-height: 1.8; 
+    color: #343434; /* 正文 */
+    margin-bottom: 8px; 
+}
+
+.article ul, 
+.article ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.article li {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+
+/* ================= 7. 保留的底部模拟视觉图样式 (可选) ================= */
+/* 如果您在 docs 的 HTML 中依然保留了之前的 mock 区域，这些样式将继续生效 */
+.mock-image-panel { 
+    margin-top: 30px; 
+    height: 300px; 
+    background-color: #1a2b42; 
+    border-radius: 4px; 
+    position: relative; 
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: center; 
+    padding-bottom: 30px; 
+}
+
+.mock-icons { 
+    display: flex; 
+    gap: 40px; 
+}
+
+.mock-icon { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    color: #aaa; 
+    font-size: 12px; 
+}
+
+.mock-icon .box { 
+    width: 45px; 
+    height: 45px; 
+    border-radius: 8px; 
+    background-color: #253a52; 
+    margin-bottom: 8px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.mock-icon .box.green { background-color: #2a5a3a; }
+.mock-icon .box.gray { background-color: #3a3a3a; }
+.mock-icon .box.orange { background-color: #5a4a2a; }
+.mock-icon .box.blue { background-color: #2a4a6a; }
+
+.mock-sidebar { 
+    position: absolute; 
+    right: 0; 
+    bottom: 40px; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: #33475c; 
+    border-radius: 4px 0 0 4px; 
+    overflow: hidden; 
+}
+
+.mock-sidebar div { 
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+.mock-sidebar div:hover { background-color: #465e77; }
+.mock-sidebar div.active { background-color: #00bcd4; }
+.mock-sidebar div.bg-blue { background-color: #0084ff; }
+
+/* 意见反馈页面居中布局 */
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    justify-content: center;
+    margin-top: 80px; /* 距离顶部的间距，可根据实际情况微调 */
+}
+
+.feedback-tip {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 25px; /* 文字与二维码的间距 */
+}
+
+.qr-code {
+    width: 260px; /* 根据实际二维码图片大小调整 */
+    height: 260px;
+    object-fit: contain;
+}
