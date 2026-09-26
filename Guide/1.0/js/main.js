@@ -132,3 +132,22 @@ function bindTopNavEvents() {
 
 // 启动程序
 init();
+
+
+// 将退出按钮的绑定放在 DOM 加载完成后执行
+document.addEventListener('DOMContentLoaded', () => {
+    const exitBtn = document.getElementById('exitBtn');
+    
+    // 防错检查
+    if (exitBtn) {
+        exitBtn.addEventListener('click', function() {
+            console.log('点击了退出按钮，正在跳转回主页...');
+            
+            // 注意：因为当前页面在 Guide/1.0/ 目录下
+            // 要跳转到根目录的 index.html，需要退回两级：../../index.html
+            window.location.href = '../../index.html'; 
+        });
+    } else {
+        console.error('未找到退出按钮，请检查 HTML 中是否包含 id="exitBtn"');
+    }
+});

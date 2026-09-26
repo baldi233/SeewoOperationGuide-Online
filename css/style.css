@@ -1,0 +1,143 @@
+/* 重置基础样式，避免受原有全局样式影响 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #fff;
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+    gap: 60px; /* 左右两栏的间距 */
+}
+
+/* --- 左侧样式 --- */
+.home-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 标题上方图片的样式 */
+.top-logo-img {
+    max-width: 80px;    /* 控制图片最大宽度，请根据实际图片比例调整 */
+    height: 20px;        /* 保持图片比例 */
+    display: block;      /* 独占一行 */
+    margin-bottom: 15px; /* 图片与下方标题之间的间距 */
+}
+
+.home-title {
+    font-size: 48px;
+    color: #111;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+}
+
+.home-desc {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* 选择框样式 */
+.home-select {
+    width: 300px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #ffffff
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+    appearance: ; /* 去除系统默认下拉箭头（视浏览器而定） */
+}
+
+/* 动态文字说明 */
+.home-dynamic-text {
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 30px 0;
+    line-height: 1.5;
+}
+
+/* 跳转按钮样式（蓝色） */
+.home-start-btn {
+    width: 120px;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a2f8; /* 蓝色背景 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 10px;
+}
+
+.home-start-btn:hover {
+    background-color: #3b69b0; /* 悬停加深 */
+}
+
+/* 按钮提示文字 */
+.home-btn-tip {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+/* GitHub 图标样式 */
+.github-link {
+    /* 关键：防止链接铺满整行，只包裹图标本身 */
+    align-self: flex-start; 
+    /* 或者使用 display: inline-block; */
+    
+    margin-top: 20px;     /* 距离上方按钮的间距 */
+    color: #888;          /* 默认图标颜色（灰色） */
+    cursor: pointer;      /* 鼠标手型 */
+    text-decoration: none;
+
+}
+
+/* 悬停效果：颜色变深，稍微放大 */
+.github-link:hover {
+    color: #24292e;       /* GitHub 经典黑/深灰色 */
+
+}
+
+.github-icon {
+    width: 36px;          /* 图标宽度 */
+    height: 36px;         /* 图标高度 */
+    display: block;
+}
+
+
+/* --- 右侧样式 --- */
+.home-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 右侧图片样式（同时作为占位符的样式） */
+.home-image {
+    width: 100%;
+    max-width: 500px;
+    height: 320px;
+    object-fit: cover; /* 保持比例填充 */
+    background-color: #4a7dcc; /* 图片加载失败或未设置时的蓝色底色，完全还原原型图 */
+    border-radius: 4px;
+    /* 如果只是纯色块占位，可以暂时不放真实图片，直接使用这个div也行
+       下面提供了一种 fallback 方案 */
+}

@@ -27,13 +27,21 @@
 </header>
 
 <div class="main-container">
-    <aside class="sidebar">
-        <!-- 侧边栏滚动容器 -->
-        <div class="sidebar-scroll">
-            <ul class="sidebar-menu" id="sidebarMenu"></ul>
+        <aside class="sidebar">
+        <ul class="sidebar-menu" id="sidebarMenu">
+            <!-- 菜单内容由JS生成 -->
+        </ul>
+        
+        <!-- 修改部分：退出按钮 -->
+        <div class="sidebar-bottom" id="exitBtn">
+            <div class="exit-icon">
+                <!-- 默认灰色图标 -->
+                <img src="images/ic_exit.png" alt="退出" class="icon-normal">
+                <!-- 悬停/按下时显示的蓝色图标 -->
+                <img src="images/ic_exit_pressed.png" alt="退出" class="icon-pressed">
+            </div>
+            <span class="exit-text">退出</span>
         </div>
-        <!-- 底部退出按钮 -->
-        <div class="sidebar-bottom"><i>⇥</i> 退出</div>
     </aside>
 
     <!-- 右侧外层灰色背景区 -->
