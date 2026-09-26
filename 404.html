@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 : This page could not be found</title>
-    <link rel="icon" href="images/ic_launcher.png" type="image/x-icon">
+    <link rel="icon" href="/SeewoOperationGuide-Online/images/ic_launcher.png" type="image/x-icon">
     <style>
         /* 重置基础样式 */
         html, body {
@@ -27,21 +27,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center; /* 让所有文字居中 */
         }
 
         /* 图片样式 */
         .error-icon {
-            width: 80px;         /* 图片宽度，可根据需要修改 */
-            height: auto;        /* 高度自适应 */
+            width: 80px;
+            height: auto;
             max-width: 100%;
-            margin-bottom: 24px; /* 图片和下方文字之间的间距 */
-            opacity: 1.0;        /* 可选：稍微降低透明度让画面更柔和 */
+            margin-bottom: 30px;
         }
 
         /* 原有的文字容器（水平排列） */
         .error-container {
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
         /* "404" 数字样式 */
@@ -65,17 +67,31 @@
             font-size: 14px;
             font-weight: 400;
             line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        
+        .return-home {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        .return-home a {
+            color: #0084ff;
+            text-decoration: none;
+        }
+        
+        .return-home a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- 包裹整个内容的容器 -->
     <div class="page-wrapper">
-        
+
         <img 
             class="error-icon" 
-            src="images/108.webp" viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' 
+            src="/SeewoOperationGuide-Online/images/108.webp" 
             alt="Error Icon"
         >
 
@@ -83,18 +99,15 @@
         <div class="error-container">
             <div class="error-code">404</div>
             <div class="error-message">This page could not be found.</div>
-            <br>
-        
         </div>
         
-        <br>
         <div class="error-message1">无法找到网页</div>
 
-        <br>
-        <p style="font-size:14px;">"在寻找什么东西吗？"</p>
+        <p style="font-size:14px; margin-bottom: 20px;">"在寻找什么东西吗？"</p>
 
-        <br>
-        <p style="font-size:14px;"> <a href="../../index.html">点击此处返回首页</a></p>
+        <p class="return-home">
+            <a href="/SeewoOperationGuide-Online/index.html">点击此处返回首页</a>
+        </p>
         
     </div>
 
