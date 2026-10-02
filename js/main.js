@@ -17,15 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataMap = {
         '0': {
             text: '(点击上方选择一个版本进行阅读)',
-            imgSrc: 'images/banner1.png' // 请确保这个路径下有这样的图片，或者您自己的图片名
+            imgSrc: 'images/banner1.png' 
         },
         '1.0': {
-            text: '此版本内容源自 F86EA / S86EB 机型',
-            imgSrc: 'images/banner1.png' // 请确保这个路径下有这样的图片，或者您自己的图片名
+            text: '此版本内容源自 S86EB 机型',
+            imgSrc: 'images/banner1.png' 
         },
         '1.1': {
-            text: '这个版本还没有添加什么内容...',
+            text: '此版本内容源自 F86EA 机型，除了部分图片内容与 1.0 (S86EB) 版本不同',
             imgSrc: 'images/banner2.png' 
+        },
+        '1.2': {
+            text: '这个版本还没有添加什么内容...',
+            imgSrc: 'images/banner0.png' 
         }
     };
 
@@ -52,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. 监听按钮的点击跳转事件（核心修复部分）
     startBtn.addEventListener('click', () => {
-        const selectedVersion = guideSelect.value; // 获取版本号 "1.0"
+        const selectedVersion = guideSelect.value; // 获取版本号 
         
         if (!selectedVersion) {
             alert('请先选择一个版本！');
