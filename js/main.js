@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataMap = {
         '0': {
             text: '(点击上方选择一个版本进行阅读)',
-            imgSrc: 'images/banner1.png' 
+            imgSrc: 'images/banner0.png' 
         },
         '1.0': {
             text: '此版本内容源自 S86EB 机型',

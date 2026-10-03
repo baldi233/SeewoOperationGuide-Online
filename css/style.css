@@ -136,7 +136,6 @@ body, html {
     max-width: 500px;
     height: 320px;
     object-fit: cover; /* 保持比例填充 */
-    background-color: #4a7dcc; /* 图片加载失败或未设置时的蓝色底色，完全还原原型图 */
     border-radius: 4px;
     /* 如果只是纯色块占位，可以暂时不放真实图片，直接使用这个div也行
        下面提供了一种 fallback 方案 */
